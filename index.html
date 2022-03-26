@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="”en”">
+<head>
+    <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+</head>
+<script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+
+<!-- TODO: Add SDKs for Firebase products that you want to use
+    https://firebase.google.com/docs/web/setup#available-libraries -->
+<script src="https://www.gstatic.com/firebasejs/8.8.1/firebase-database.js"></script>
+<script>
+    const firebaseConfig = {
+        apiKey: "AIzaSyCkIPVPxLquXTrMjdSYKpk3HstBMf990MM",
+        authDomain: "arduinoweek2022-af566.firebaseapp.com",
+        projectId: "arduinoweek2022-af566",
+        storageBucket: "arduinoweek2022-af566.appspot.com",
+        messagingSenderId: "37929653737",
+        appId: "1:37929653737:web:72a0bf6e926d8094d22778",
+        measurementId: "G-G30NDP8TBZ"
+    }
+
+    firebase.initialize(firebaseConfig)
+
+    function ledOn(){
+        firebase.database().ref('SALA').set({estado: 'LIGADO'})
+    }
+
+    function ledOff(){
+        firebase.database().ref('SALA').set({estado: 'DESLIGADO'})
+    }
+
+    function ledOn(){
+        firebase.database().ref('QUARTO1').set({estado: 'LIGADO'})
+    }
+
+    function ledOff(){
+        firebase.database().ref('QUARTO1').set({estado: 'DESLIGADO'})
+    }
+
+    function ledOn(){
+        firebase.database().ref('QUARTO2').set({estado: 'LIGADO'})
+    }
+
+    function ledOff(){
+        firebase.database().ref('QUARTO2').set({estado: 'DESLIGADO'})
+    }
+
+</script>
+<script src="app.js" defer></script>
+<body>
+<header>
+    <img src="foto.png" width="120" height="120">
+    <h1>TIME Education</h1>
+    <h2>Arduino Week 2022</h2>
+    <h2>Faculdade de Engenharia UEM</h2>
+</header>
+
+<h1>Controle Remote de iluminacao</h1>
+<fieldset>
+    <legend>sala</legend>
+    <div>
+        <button  class="led-on" onClick="ledOn()">ligar</button>
+        <button class="led-off" onclick="ledoff()">desligar</button>
+    </div>
+</fieldset>
+<br/>
+
+<fieldset>
+    <legend>quarto 1</legend>
+    <div>
+        <button class="led-on" onClick="ledOn1()">ligar</button>
+        <button class="led-off" onclick="ledoff1()">desligar</button>
+    </div>
+</fieldset>
+<br/>
+
+<fieldset>
+    <legend>quarto 2</legend>
+    <div>
+        <button  class="led-on" onClick="ledOn2()">ligar</button>
+        <button class="led-off" onclick="ledoff2()">desligar</button>
+    </div>
+</fieldset>
+
+<footer>
+    <p><strong>Aene Uetimane</strong></p>
+</footer>
+</body>
+</html>
